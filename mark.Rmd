@@ -1,0 +1,208 @@
+---
+title: "Introdução ao R"
+output: pdf_document
+author: "CONSTAT JR"
+date: "09-09-2022"
+editor: visual
+bibliography: references.bib
+---
+
+![](images/C%C3%B3pia%20de%20logop.png){width="400"}
+
+## Como utilizar esse material
+
+O material foi dividido em tópicos pensados para expor diversos campos da linguagem sem qualquer intenção de cobrir todas as lacunas, visto que isso não seria possível em uma tarde (nem em uma semana 😝)
+
+Os retângulos em rosa claro abaixo estão representando linhas de códigos no R
+
+aqui está o código que vai ser processado
+
+``` r
+1 + 1
+```
+
+e aqui está a resposta
+
+``` r
+[1] 2
+```
+
+Como seria no RStudio
+
+![](images/paste-44357FC1.png){width="232"}
+
+![](images/paste-69EE252B.png){width="300"}
+
+## R como calculadora
+
+A calculadora do R **respeita** a matemática
+
+Então isso
+
+$$ {\frac {2 \cdot 2 - (2 + 2)}{2}= \text{0}} $$
+
+é igual a isso
+
+``` r
+2 * 2 - (4 + 4) / 2
+```
+
+``` r
+[1] 0
+```
+
+## Objetos e seus nomes
+
+O operador `<-` permite armazenar *"coisas"* dentro de objetos
+
+``` r
+# Armazenando 300 em ENCEJ
+
+ENCEJ <- 300
+
+ENCEJ
+```
+
+``` r
+[1] 300
+```
+
+**Classe dos Objetos**
+
+no R existem diferentes tipos de objetos e cada objeto possui as suas carecterísticas
+
+``` r
+x <- "Igor"
+
+constat <- "30.000"
+
+Constat <- "metas"
+```
+
+``` r
+x
+
+constat 
+
+Constat
+```
+
+## Vetores
+
+Os vetores são ***conjuntos indexados de valores***. Tem SEMPRE esse formato:
+
+``` r
+nome_do_vetor <- c(1, 2, "Igor", "CJA")
+```
+
+``` r
+class(vetor)
+```
+
+O nome desse comportamento é **coerção**, onde as classes mais fracas se subvertem as mais fortes
+
+> Significado de Indexado
+>
+> O mesmo que: **listado, ordenado, organizado**.
+
+**Operações com vetores**
+
+``` r
+CJA <- c(2, 6, 3, -5)
+
+CJA + 1
+```
+
+**Reciclagem**
+
+``` r
+Constat <- c(1, 2)
+
+CJA + Constat
+```
+
+## Funções
+
+"é uma relação matemática estabelecida entre duas variáveis."
+
+"é uma regra que relaciona cada elemento de um conjunto a um único elemento de outro conjunto."
+
+## Importação de dados ![](https://readr.tidyverse.org/logo.png){width="65"} ![](https://readxl.tidyverse.org/logo.png){width="65"}
+
+**Arquivos .CSV**
+
+Para importar esse tipo de dado precisaremos do pacote `readr`
+
+Utilizaremos a função `read_csv()` para arquivos separados por vírgulas. Para arquivos separados por ponto-e-vírgula usaremos `read_csv2()`
+
+**Arquivos .XLSX ou .XLS**
+
+Utilizaremos a função `read_excel()` do pacote `readxl`
+
+**Arquivos .TXT**
+
+Para ler os arquivos `.txt` podemos usar a função `read_delim()`
+
+Mas o que é um **pacote?**
+
+## Pacotes
+
+Um pacote é como se fosse uma encomenda que você faz ao R de novas funções, é sobre extrapolar as margens e trabalhar em conjunto com a comunidade
+
+Para instalarmos um pacote usamos a função
+
+``` r
+install.packages("nome_do_pacote")
+```
+
+assim, o pacote está instalado em seu computador. Para conseguirmos utilizá-lo fazemos uso de
+
+``` r
+library(nome_do_pacote)
+```
+
+## Gráficos ![](https://ggplot2.tidyverse.org/logo.png){width="65"} ![](https://cran.r-project.org/web/packages/esquisse/readme/man/figures/logo.png){width="94" height="90"}
+
+"ggplot2 é um sistema para criar gráficos declarativamente, baseado em [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl) . Você fornece os dados, informa ao ggplot2 como mapear variáveis ​​para estética, quais primitivas gráficas usar e ele cuida dos detalhes." *- alguém no site do tidyverse*
+
+Para instalá-lo
+
+``` r
+install.packages("ggplot2")
+```
+
+Para habilitá-lo
+
+``` r
+library("ggplot2")
+```
+
+...porém lendo o site da [Curso-R](https://curso-r.com/) (aquele parceiro que a gente ama \<3) eu conheci o esquisse.
+
+**Esquisse**
+
+Esse pacote foi criado com intuito de envelopar o **ggplot2** e o transformar em algo super acessível.
+
+O funcionamento do esquisse está explicado de forma detalhada [aqui](https://igormillis7.wixsite.com/igorlimamillis/post/pacote-esquisse).
+
+## Relatórios e Apresentações ![](https://beatrizmilz.github.io/slidesR/img/rlogos/hex-rmarkdown.png){width="65" height="75"} ![](https://d33wubrfki0l68.cloudfront.net/1e13e2f2b4d1760d131ad2be5096e105573341e2/db099/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system/thumbnail_huc2394eec6c3beee37cf037e067ab5abf_72127_2220x0_resize_q75_box.jpg){width="112" height="75"}
+
+**R Markdown** e **Quarto**, irmão mais velho e irmão mais novo, são fundamentais para quem pensa em criar documentos e apresentações reprodutíveis utilizando o R.
+
+E é agora que eu mostro para vocês como este documento foi produzido
+
+## Materiais para Consulta
+
+[R for Data Sciente](https://r4ds.had.co.nz/), do Hadley Wickham e Garrett Grolemund
+
+[Ciência de Dados em R](https://livro.curso-r.com/index.html), da Curso-R
+
+## Referências e Menções
+
+O conteúdo disposto aqui foi totalmente produzido em **RMarkdown** [-@rmarkdown]
+
+Os pacotes **ggplot2** [-@ggplot2], **esquisse** [-@esquisse]; **readxl** [-@readxl]; e [**readr** -@readr] foram pilares para a construção deste material.
+
+<center>**Agradedcimento**</center>
+
+<center>![Curso-R](https://discourse.curso-r.com/uploads/default/original/1X/df789d4bc19428ffeeb6ce337183b7107548f655.png){alt="Curso-R" width="100" height="112"}</center>
