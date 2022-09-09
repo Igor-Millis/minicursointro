@@ -205,4 +205,6 @@ Os pacotes **ggplot2** [-@ggplot2], **esquisse** [-@esquisse]; **readxl** [-@rea
 
 <center>**Agradedcimento**</center>
 
-<center>![Curso-R](https://discourse.curso-r.com/uploads/default/original/1X/df789d4bc19428ffeeb6ce337183b7107548f655.png){alt="Curso-R" width="100" height="112"}</center>
+<center></center>
+
+...
